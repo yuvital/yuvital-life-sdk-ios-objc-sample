@@ -101,24 +101,47 @@ Xcode enables User Script Sandboxing by default, which can block CocoaPods’ st
 - Search for **`ENABLE_USER_SCRIPT_SANDBOXING`**.
 - Set **`ENABLE_USER_SCRIPT_SANDBOXING`** to **`NO`** for all configurations (Debug/Release).
 
-
 **Open The SDK Screen**
 
 The Yuvital Life SDK provides a React Native screen with the module name **`"YuvitalLifeNativeSdk"`**. Initialize the React runtime **once**, then present this screen wherever needed in your application.
 
-Open the SDK from any screen
+**Use a small Swift bridge class** `YuvitalLifeSdkBridge` to call the Swift‑based YuviTal Life SDK from an Objective‑C.
+
+```swift
+// YuvitalLifeSdkBridge.swift
+import Foundation
+import YuvitalLifeSDK
+import ReactBrownfield
+
+@objc final class YuvitalLifeSdkBridge: NSObject {
+
+    @objc static func configure() {
+        ReactNativeBrownfield.shared.bundle = ReactNativeBundle
+        ReactNativeBrownfield.shared.startReactNative()
+    }
+
+    @objc static func makeYuvitalSdkViewController() -> UIViewController {
+        let rnVC = ReactNativeViewController(
+            moduleName: "YuvitalLifeNativeSdk",
+            initialProperties: nil
+        )
+        let sdkWrapper = YuvitalLifeSdkViewController(embeddedViewController: rnVC)
+        return sdkWrapper
+    }
+}
+```
 
 **Initialize once at startup** (AppDelegate, SceneDelegate or SwiftUI App)
 
 ```objc
-import YuvitalLifeSDK
-import ReactBrownfield
+#import "Yuvital_Life_SDK_Sample-Swift.h"
+// ...
 
-// AppDelegate example
-func application(...) -> Bool {
+// AppDelegate.m example
+- (BOOL)application:(UIApplication *)application
+        didFinishLaunchingWithOptions:(NSDictionary<UIApplicationLaunchOptionsKey, id> *)launchOptions {
     // ...
-    ReactNativeBrownfield.shared.bundle = ReactNativeBundle
-    ReactNativeBrownfield.shared.startReactNative()
+    [YuvitalLifeSdkBridge configure];
     // ...
 }
 ```
@@ -126,13 +149,12 @@ func application(...) -> Bool {
 The SDK includes a ready‑made view controller YuvitalLifeSdkViewController that hosts the YuvitalLifeNativeSdk screen.
 Push the wrapper that hosts the SDK from any screen:
 
-```swift
-import YuvitalLifeSDK
-import ReactBrownfield
+```objc
+#import "Yuvital_Life_SDK_Sample-Swift.h"
+// ...
 
-func openYuvitalLifeSdkTapped() {
-    let rnVC = ReactNativeViewController(moduleName: "YuvitalLifeNativeSdk")
-    let sdkWrapper = YuvitalLifeSdkViewController(embeddedViewController: rnVC)
-    navigationController?.pushViewController(sdkWrapper, animated: true)
+- (void)openYuvitalLifeSdkTapped {
+    UIViewController *sdkWrapper = [YuvitalLifeSdkBridge makeYuvitalSdkViewController];
+    [self.navigationController pushViewController:sdkWrapper animated:YES];
 }
 ```
