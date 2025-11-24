@@ -6,8 +6,15 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		B5D2F6947BA2BE2E018C0892 /* Pods_Yuvital_Life_SDK_Sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD356B06311A58CEDFAB7BC0 /* Pods_Yuvital_Life_SDK_Sample.framework */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		20D9C14EA762AB47277B4462 /* Pods-Yuvital Life SDK Sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yuvital Life SDK Sample.debug.xcconfig"; path = "Target Support Files/Pods-Yuvital Life SDK Sample/Pods-Yuvital Life SDK Sample.debug.xcconfig"; sourceTree = "<group>"; };
 		5B24942B2ED34DEF00E94750 /* Yuvital Life SDK Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Yuvital Life SDK Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BDC043495EBD0B8CE2328682 /* Pods-Yuvital Life SDK Sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yuvital Life SDK Sample.release.xcconfig"; path = "Target Support Files/Pods-Yuvital Life SDK Sample/Pods-Yuvital Life SDK Sample.release.xcconfig"; sourceTree = "<group>"; };
+		DD356B06311A58CEDFAB7BC0 /* Pods_Yuvital_Life_SDK_Sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Yuvital_Life_SDK_Sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -23,17 +30,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5D2F6947BA2BE2E018C0892 /* Pods_Yuvital_Life_SDK_Sample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F942D49EAE81AD88A7B536C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				20D9C14EA762AB47277B4462 /* Pods-Yuvital Life SDK Sample.debug.xcconfig */,
+				BDC043495EBD0B8CE2328682 /* Pods-Yuvital Life SDK Sample.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		5B2494222ED34DEF00E94750 = {
 			isa = PBXGroup;
 			children = (
 				5B24942D2ED34DEF00E94750 /* Yuvital Life SDK Sample */,
 				5B24942C2ED34DEF00E94750 /* Products */,
+				2F942D49EAE81AD88A7B536C /* Pods */,
+				A5BF6331295392ED7D5CA0BE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -45,6 +64,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		A5BF6331295392ED7D5CA0BE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DD356B06311A58CEDFAB7BC0 /* Pods_Yuvital_Life_SDK_Sample.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -52,9 +79,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5B2494392ED34DF100E94750 /* Build configuration list for PBXNativeTarget "Yuvital Life SDK Sample" */;
 			buildPhases = (
+				C3CCBF1D402327F28FDE1732 /* [CP] Check Pods Manifest.lock */,
 				5B2494272ED34DEF00E94750 /* Sources */,
 				5B2494282ED34DEF00E94750 /* Frameworks */,
 				5B2494292ED34DEF00E94750 /* Resources */,
+				6C2D7ED20278A4420D485BF8 /* [CP] Embed Pods Frameworks */,
+				23B1B82D9BE72FA6539C1DBC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -64,8 +94,6 @@
 				5B24942D2ED34DEF00E94750 /* Yuvital Life SDK Sample */,
 			);
 			name = "Yuvital Life SDK Sample";
-			packageProductDependencies = (
-			);
 			productName = "Yuvital Life SDK Sample";
 			productReference = 5B24942B2ED34DEF00E94750 /* Yuvital Life SDK Sample.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +141,65 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		23B1B82D9BE72FA6539C1DBC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Yuvital Life SDK Sample/Pods-Yuvital Life SDK Sample-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Yuvital Life SDK Sample/Pods-Yuvital Life SDK Sample-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Yuvital Life SDK Sample/Pods-Yuvital Life SDK Sample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6C2D7ED20278A4420D485BF8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Yuvital Life SDK Sample/Pods-Yuvital Life SDK Sample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Yuvital Life SDK Sample/Pods-Yuvital Life SDK Sample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Yuvital Life SDK Sample/Pods-Yuvital Life SDK Sample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C3CCBF1D402327F28FDE1732 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Yuvital Life SDK Sample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5B2494272ED34DEF00E94750 /* Sources */ = {
@@ -246,6 +333,7 @@
 		};
 		5B24943A2ED34DF100E94750 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 20D9C14EA762AB47277B4462 /* Pods-Yuvital Life SDK Sample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -253,12 +341,14 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Yuvital Life SDK Sample/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = NO;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -274,6 +364,7 @@
 		};
 		5B24943B2ED34DF100E94750 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BDC043495EBD0B8CE2328682 /* Pods-Yuvital Life SDK Sample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -281,12 +372,14 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Yuvital Life SDK Sample/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = NO;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
