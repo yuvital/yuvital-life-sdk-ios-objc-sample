@@ -1,8 +1,7 @@
 #import "RootViewController.h"
 
 @import UIKit;
-// @import ReactBrownfield;
-// @import YuvitalLifeSDK;
+#import "Yuvital_Life_SDK_Sample-Swift.h"
 
 #pragma mark - YuvitalCardConfig
 
@@ -129,13 +128,11 @@
 
 - (void)configureWithConfig:(YuvitalCardConfig *)config {
     if (config.isPrimary) {
-        // Primary card color: (0.40, 0.45, 0.88)
         self.containerView.backgroundColor = [UIColor colorWithRed:0.40
                                                              green:0.45
                                                               blue:0.88
                                                              alpha:1.0];
     } else {
-        // Secondary card color: (0.09, 0.09, 0.12)
         self.containerView.backgroundColor = [UIColor colorWithRed:0.09
                                                              green:0.09
                                                               blue:0.12
@@ -258,10 +255,8 @@
 }
 
 - (void)openYuvitalLifeSdkTapped {
-    // ReactNativeViewController *rnVC = [[ReactNativeViewController alloc] initWithModuleName:@"YuvitalLifeNativeSdk"];
-    // YuvitalLifeSdkViewController *sdkWrapper =
-    //     [[YuvitalLifeSdkViewController alloc] initWithEmbeddedViewController:rnVC];
-    // [self.navigationController pushViewController:sdkWrapper animated:YES];
+    UIViewController *sdkWrapper = [YuvitalLifeSdkBridge makeYuvitalSdkViewController];
+    [self.navigationController pushViewController:sdkWrapper animated:YES];
 }
 
 

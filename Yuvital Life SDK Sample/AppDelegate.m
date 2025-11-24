@@ -1,8 +1,6 @@
 #import "AppDelegate.h"
-
+#import "Yuvital_Life_SDK_Sample-Swift.h"
 @import UIKit;
-// @import ReactBrownfield;
-// @import YuvitalLifeSDK;
 
 #import "RootViewController.h"
 
@@ -10,12 +8,8 @@
 
 - (BOOL)application:(UIApplication *)application
         didFinishLaunchingWithOptions:(NSDictionary<UIApplicationLaunchOptionsKey, id> *)launchOptions {
-    
-    NSLog(@"didFinishLaunchingWithOptions called");
-    
-    // Configure React Native brownfield host (matches Swift sample logic)
-    // ReactNativeBrownfield.shared.bundle = ReactNativeBundle;
-    // [ReactNativeBrownfield.shared startReactNative];
+
+    [YuvitalLifeSdkBridge configure];
 
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
 
